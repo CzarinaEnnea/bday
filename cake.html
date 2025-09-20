@@ -11,18 +11,19 @@
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
       #mainTitle {
         font-size: 32px;
         /* font-family: 'Pixelify Sans', sans-serif; */
-        font-family: "Sriracha";
+        font-family: "Sriracha", cursive;
         margin-bottom: 8px;
       }
 
       #subTitle {
         font-size: 18px;
         /* font-family: 'Pixelify Sans', sans-serif; */
-        font-family: "Sriracha";
+        font-family: "Sriracha", cursive;
         color: #555;
       }
     </style>
@@ -32,6 +33,9 @@
       <div id="birthdayText"></div>
       <div class="blow-container">
         <button id="blowBtn">Blow Candles</button>
+        <button id="messageBtn" onclick="window.location.href='https://www.youtube.com/'">
+          <i class="fa-solid fa-envelope"></i>
+        </button>
       </div>
       <div class="cake-container">
         <div class="cake" id="cake"></div>
@@ -47,7 +51,7 @@
 
       const birthdayText = document.getElementById("birthdayText");
       birthdayText.innerHTML = `
-        <div id="mainTitle">Cake For You!</div>
+        <div id="mainTitle">A Cake For You!</div>
         <div id="subTitle">Make a wish and blow the candles</div>
       `;
 
@@ -177,8 +181,17 @@
     const blowBtn = document.getElementById("blowBtn");
 
     blowBtn.addEventListener("click", function () {
-      // alert("💨 You blew the candle!");
       blowOutCandles();
+    });
+
+    // Show Button after blow
+    const messageBtn = document.getElementById("messageBtn");
+
+    blowBtn.addEventListener("click", function () {
+      messageBtn.style.display = "inline-block"; // make it visible in DOM
+      setTimeout(() => {
+        messageBtn.classList.add("show"); // trigger the animation
+      }, 4000); // tiny delay so transition works
     });
     </script>
   </body>

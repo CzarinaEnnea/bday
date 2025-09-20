@@ -11,7 +11,7 @@
 }
 * {
     /* font-family: "Pixelify Sans", sans-serif; */
-    font-family: "Sriracha";
+    font-family: "Sriracha", cursive;
     /* background-color: #feefe5; */
     
     /* border: red solid 2px; */
@@ -22,7 +22,7 @@ body {
   padding: 0;
   padding-top: 20px;
   /* font-family: 'Pixelify Sans', sans-serif; */
-  font-family: "Sriracha";
+  font-family: "Sriracha", cursive;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -53,7 +53,8 @@ body {
   z-index: 0;
 }
 
-#blowBtn {
+#blowBtn,
+#messageBtn {
   position: relative;
   margin-top: 17px;
   width: 209px;
@@ -71,6 +72,21 @@ body {
   border: 3px solid var(--color-black);
   transition: 0.5s ease-in-out;
 }
+
+#messageBtn{
+    display: none; /* hidden at start */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    margin-top: 10px;
+}
+
+#messageBtn.show {
+    display: inline-block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .cake-container {
   padding-right: 500px;
 }
